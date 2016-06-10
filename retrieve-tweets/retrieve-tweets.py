@@ -41,7 +41,7 @@ def main():
 		fin = codecs.open(args.id_list_file, 'r', 'utf-8')
 		for tweetid in fin:
 			tweetid = tweetid.strip()
-			if not (tweetid + '.txt') in os.listdir('args.outputpath'):
+			if not (tweetid + '.txt') in os.listdir(args.outputpath):
 				try:
 					tweet = twitter.show_status(id=tweetid)
 					fout  = codecs.open(str(args.outputpath) + tweetid + '.txt', 'w', 'utf-8')
